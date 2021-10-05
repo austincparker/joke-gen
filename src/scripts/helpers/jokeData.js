@@ -8,4 +8,10 @@ const getJoke = async () => {
   return jokeCall.data;
 };
 
-export default getJoke;
+const getJokeById = async (id) => {
+  const oneJoke = await axios.get(`https://v2.jokeapi.dev/joke/Any?idRange=${id}`);
+
+  return oneJoke.data;
+};
+
+export { getJoke, getJokeById };
